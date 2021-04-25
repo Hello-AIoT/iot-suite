@@ -1,2 +1,2 @@
 # iot-suite
-iot application develop suite
+iot application develop suite.
