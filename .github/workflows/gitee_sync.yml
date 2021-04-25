@@ -1,0 +1,17 @@
+name: Gitee repos mirror periodic job
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Mirror the Github organization repos to Gitee.
+      uses: Yikun/hub-mirror-action@v1.0
+      with:
+        src: github/Hello-AIoT
+        dst: gitee/Hello-AIoT
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token:  ${{ secrets.GITEE_TOKEN }}
+        timeout: 600
+        debug: true
+        force_update: true
+        static_list: "iot-suite"
